@@ -20,14 +20,4 @@ use App\Entity\User;
 $controller = new Controller;
 $controller->route();
 
-
-// TEST
-/**
-*   $specificationsRepository = new GameRepository;
-*   $gameDetail = $specificationsRepository->findDetail(1);
-
-*   var_dump($gameDetail);
- */
-
-
 ?>
