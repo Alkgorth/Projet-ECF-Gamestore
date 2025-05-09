@@ -47,11 +47,7 @@ use App\Tools\UserValidator;
                 <?= Navigation::addActiveClass('pages', 'creationCompte') ?>">Inscription</a>
             <?php } ?>
           </li>
-
-          <li class="nav-item dropdown">
-           
-          </li>
-
+          
           <li class="nav-item">
             <form class="d-flex nav-link" role="search">
               <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">

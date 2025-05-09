@@ -34,7 +34,8 @@ require_once _ROOTPATH_ . '\templates\header.php';
             </h1>
         </a>
 
-        <div id="carouselNews" class="carousel slide mt-4 col-10" data-bs-ride="carousel">
+        <div class="container d-flex justify-content-center">
+        <div id="carouselNews" class="carousel slide mt-4 col-8" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php for ($i = 0; $i < 3; $i++) { ?>
                     <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
@@ -65,6 +66,7 @@ require_once _ROOTPATH_ . '\templates\header.php';
                 <span class="visually-hidden-focusable">Next</span>
             </button>
         </div>
+        </div>
     </section>
 
     <section class="container-fluid mt-4 mb-4">
@@ -77,7 +79,8 @@ require_once _ROOTPATH_ . '\templates\header.php';
             </h1>
         </a>
 
-        <div id="carouselPromotions" class="carousel slide mt-4 col-10" data-bs-ride="carousel">
+        <div class="container d-flex justify-content-center">
+        <div id="carouselPromotions" class="carousel slide mt-4 col-8" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php for ($i = 0; $i < 3; $i++) { ?>
                     <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
@@ -106,8 +109,7 @@ require_once _ROOTPATH_ . '\templates\header.php';
                 <span class="bi bi-arrow-right-circle fs-1 text-warning" aria-hidden="true"></span>
                 <span class="visually-hidden-focusable">Next</span>
             </button>
-
-
+        </div>
         </div>
     </section>
 </main>

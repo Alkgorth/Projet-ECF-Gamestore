@@ -15,6 +15,7 @@ use DateTime;
 
 class UserRepository extends MainRepository
 {
+    //Trouver une utilisateur par son identifiant
     public function findOneById(int $id)
     {
         // requête qui récupère l'utilisateur
@@ -29,6 +30,7 @@ class UserRepository extends MainRepository
         }
     }
 
+    //Trouver un utilisateur par son mail
     public function findUserByMail(string $mail)
     {
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
@@ -49,6 +51,7 @@ class UserRepository extends MainRepository
         }
     }
 
+    //Création ou Update d'un compte
     public function persist(User $user)
     {
         // requête qui insère l'utilisateur
@@ -79,6 +82,7 @@ class UserRepository extends MainRepository
         return $query->execute();
     }
 
+    //Suppression d'un compte
     public function delete(int $id)
     {
         // requête qui supprime l'utilisateur
@@ -87,6 +91,7 @@ class UserRepository extends MainRepository
         return $query->execute();
     }
 
+    //Fonction pour mot de passe oublié
     public function forgottenPassword(User $user, string $tokenValue)
     {
 
