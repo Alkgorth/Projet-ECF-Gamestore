@@ -9,8 +9,6 @@ require_once _ROOTPATH_ . '\templates\header.php';
 <!-- Image en-tête -->
 <section class="text-white">
     <div class="container mt-4">
-
-
         <img src="..\assets\images\Jeux\far-cry-6.jpg" class="d-block w-100" alt="Assassin's Creed Valhalla">
     </div>
     <div class="container p-4">

@@ -38,7 +38,7 @@ use App\Repository\SpecificationsRepository;
     </h2>
     <!-- Première Card -->
     <?php foreach ($games as $game) { ?>
-      <div class="card col-sm-6 mb-3 mb-sm-0 py-2">
+      <div class="card col-sm-5 mb-3 mb-sm-0 py-2 g-3 ms-3">
         <a href="index.php?controller=games&action=jeuxDetail&id=<?= $game['id'] ?>" id="jeu_promo" class="text-decoration-none text-white">
           <img src="..\assets\images\Jeux\GodFall_panorama.jpg" class="card-img-top" alt="<?= $game['name'] ?>">
         </a>
