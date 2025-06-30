@@ -34,7 +34,6 @@ class Controller
                         break;
                 }
             } else {
-
                 $pageController = new UserController();
                 $pageController->home();
             }
@@ -45,12 +44,9 @@ class Controller
         }
     }
 
-
     protected function render(string $path, array $params = []): void
     {
-
         $filePath = _ROOTPATH_ . '/templates/' . $path . '.php';
-
         try {
             if (!file_exists($filePath)) {
                 throw new \Exception("Fichier non trouvé : " . $filePath);

@@ -4,7 +4,6 @@ namespace App\Tools;
 
 class StringTools
 {
-
     public static function toCamelCase($value, $pascalCase = false)
     {
         $value = ucwords(str_replace(array('-', '_'), ' ', $value));
@@ -19,7 +18,6 @@ class StringTools
 
     public static function toPascalCase($value)
     {
-
         return self::toCamelCase($value, true);
     }
 }

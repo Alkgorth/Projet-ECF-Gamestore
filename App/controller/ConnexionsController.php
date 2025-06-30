@@ -49,11 +49,8 @@ class ConnexionsController extends Controller
         }
     }
 
-
     protected function connexion()
     {
-
-
         $error = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
@@ -88,7 +85,6 @@ class ConnexionsController extends Controller
         ]);
     }
 
-
     protected function mdpOublie()
     {
         try {
@@ -103,10 +99,8 @@ class ConnexionsController extends Controller
                 if ($mail === $user->getMail()) {
                     $tokenGenerate = new Token();
                     $token = $tokenGenerate->generateToken();
-
                     $tokenRepository = new UserRepository();
                     $tokenTable = $tokenRepository->forgottenPassword($user, $token);
-
                     SendMail::mailForgottenPassword($user->getLastName(), $user->getFirstName(), $user->getMail(), $tokenTable->getToken());
                 }
             }
@@ -121,14 +115,10 @@ class ConnexionsController extends Controller
         }
     }
 
-
-
     protected function mdpReinitialise()
     {
         $this->render('connexions/mdpReinitialise', []);
     }
-
-
 
     protected function reinitialiserMdp()
     {
@@ -137,7 +127,6 @@ class ConnexionsController extends Controller
 
             if(isset($_GET['token'])){
                 $tokenValue = $_GET['token'];
-
                 $tokenRepo = new TokenRepository();
                 $token = $tokenRepo->findToken($tokenValue);
 
@@ -146,7 +135,6 @@ class ConnexionsController extends Controller
                 }
 
                 $userId = $token->getFkIdUser();
-
                 $tokenIsValidate = new Token();
                 $tokenIsValidate->isTokenValid($token);
 
@@ -170,16 +158,13 @@ class ConnexionsController extends Controller
                     if(empty($error)){
                         $user->setPassword($password);
                         $userRepo->updatePassword($user);
-
                         $tokenRepo->deleteToken($tokenValue);
-
                         header('Location: index.php?controller=connexions&action=mdpReinitialise');
                     }
                 }
             } else {
                 header('Location: index.php');
             }
-
 
             $this->render('connexions/reinitialiserMdp', [
                 'error' => $error
