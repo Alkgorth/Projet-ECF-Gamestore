@@ -32,6 +32,4 @@ class Security
     {
         return isset($_SESSION['user']);
     }
-
-
 }

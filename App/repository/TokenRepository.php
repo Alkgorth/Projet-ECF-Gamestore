@@ -27,7 +27,6 @@ class TokenRepository extends MainRepository
         } else {
             return null;
         }
-        
     }
 
     public function deleteToken(string $tokenValue)
@@ -35,6 +34,5 @@ class TokenRepository extends MainRepository
         $query = $this->pdo->prepare('DELETE FROM tokens WHERE token = :token');
         $query->bindValue(':token', $tokenValue,$this->pdo::PARAM_STR);
         return $query->execute();
-        
     }
 }
